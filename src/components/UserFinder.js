@@ -3,6 +3,8 @@ import { Component } from "react";
 import classes from "./UserFinder.module.css";
 import Users from "./Users";
 
+import UsersContext from '../store/users-context'
+
 const DUMMY_USERS = [
   { id: "u1", name: "Max" },
   { id: "u2", name: "Manuel" },
@@ -10,6 +12,8 @@ const DUMMY_USERS = [
 ];
 
 class UserFinder extends Component {
+  static contextType = UsersContext;
+
   constructor() {
     super();
     this.state = {
